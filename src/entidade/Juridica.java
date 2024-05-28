@@ -23,6 +23,8 @@ public class Juridica extends Contribuinte {
 	
 	@Override
 	public double taxa() {
-		return (getRendimentoAnual()*0.14);
+		double taxaBasica = (numeroDeEmpregados > 10) ? getRendimentoAnual()*0.14 : getRendimentoAnual()*0.16;
+		
+		return taxaBasica;
 	};
 }
